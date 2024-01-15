@@ -7,7 +7,6 @@ public class Main {
 		System.out.println("엄윤준 충돌 도전");
 		System.out.println("오늘점심 어디갈까요?");
 
-
 	}
-	
+
 }
