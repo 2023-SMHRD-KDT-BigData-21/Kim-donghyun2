@@ -6,7 +6,6 @@ public class Main {
 
 	public static void main(String[] args) {
 
-
 		Scanner sc = new Scanner(System.in);
 
 		System.out.println("====자바 랜드====");
@@ -19,7 +18,7 @@ public class Main {
 
 			} else if (menu == 2) {
 				System.out.println("====로그인====");
-				
+
 				while (true) {
 					System.out.println("[1]입장 [2]게임 룰 설명 [3]게임 종료");
 					System.out.print("메뉴를 선택하세요 : ");
@@ -41,6 +40,5 @@ public class Main {
 
 		}
 
-
-}
+	}
 }
