@@ -1,5 +1,6 @@
 package controller;
 
+import model.UserDAO;
 import model.UserVO;
 
 public class Controller {
@@ -9,8 +10,8 @@ public class Controller {
 		System.out.println("입력한 ID : " + user.getId());
 		System.out.println("입력한 PW : " + user.getPw());
 		
-		
-		
-		return null ;
+		UserDAO dao = new UserDAO();
+		String name = dao.login(user);
+		return name;
 	}
 }
