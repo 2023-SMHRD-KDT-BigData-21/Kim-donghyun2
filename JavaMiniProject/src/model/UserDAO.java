@@ -34,9 +34,9 @@ public class UserDAO {
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			
-			String url = "jdbc:oracle:thin:@localhost:1521:xe";
-			String user = "service";
-			String db_pw = "12345";
+			String url = "jdbc:oracle:thin:@project-db-campus.smhrd.com:1523:xe";
+			String user = "seocho_21K_bigdata_mini_1";
+			String db_pw = "smhrd1";
 			
 			conn = DriverManager.getConnection(url, user, db_pw);
 		} catch (Exception e) {
@@ -55,5 +55,5 @@ public class UserDAO {
 		}
 	}
 	
-}
+
 }
