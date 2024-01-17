@@ -7,6 +7,7 @@ import java.sql.ResultSet;
 
 public class UserDAO {
 	int row = 0;
+
 	public int Balance() {
 
 		int bal = 0;
@@ -77,23 +78,21 @@ public class UserDAO {
 
 		} catch (Exception e) {
 			e.printStackTrace();
-		}finally {
+		} finally {
 			getClose();
 		}
 		return row;
 	}
-	
 
-
-	public String login(UserVO user) {
+	public String login(UserVO member) {
 		String name = null;
 		getConn();
 		try {
-			String sql = "select name from USER_INFO where id=? and pw =?";
+			String sql = "select U_NAME from USER_INFO where U_ID =? and U_PW =?";
 			psmt = conn.prepareStatement(sql);
 
-			psmt.setString(1, user.getId());
-			psmt.setString(2, user.getPw());
+			psmt.setString(1, member.getId());
+			psmt.setString(2, member.getPw());
 
 			rs = psmt.executeQuery();
 			if (rs.next()) {
@@ -102,11 +101,10 @@ public class UserDAO {
 
 		} catch (Exception e) {
 			e.printStackTrace();
-		}finally {
+		} finally {
 			getClose();
 		}
 		return name;
 	}
-
 
 }

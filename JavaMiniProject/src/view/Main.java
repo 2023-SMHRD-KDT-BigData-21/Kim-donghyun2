@@ -2,10 +2,8 @@ package view;
 
 import java.util.Scanner;
 
-import controller.Controller;
 import controller.joinController;
 import controller.loginController;
-import model.MemberVO;
 import model.UserVO;
 
 public class Main {
