@@ -2,7 +2,10 @@ package view;
 
 import java.util.Scanner;
 
+import controller.Controller;
 import controller.joinController;
+import controller.loginController;
+import model.MemberVO;
 import model.UserVO;
 
 public class Main {
@@ -35,7 +38,23 @@ public class Main {
 				System.out.println("회원가입에 " + result + "하셨습니다.");
 
 			} else if (menu == 2) {
+				loginController con = new loginController();
 				System.out.println("====로그인====");
+				System.out.print("ID : ");
+				String id = sc.next();
+				System.out.print("PW : ");
+				String pw = sc.next();
+				
+				UserVO user = new UserVO(id, pw);
+
+				String name = con.login(user);
+
+				if (name != null) {
+					System.out.println(name + "님 로그인 성공하셧습니다. ");
+				} else {
+					System.out.println("아이디 비밀번호를 확인해주세요~");
+				}
+
 
 				while (true) {
 					System.out.println("[1]입장 [2]게임 룰 설명 [3]게임 종료");

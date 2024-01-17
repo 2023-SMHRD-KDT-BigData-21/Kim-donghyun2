@@ -3,7 +3,7 @@ package controller;
 import model.UserDAO;
 import model.UserVO;
 
-public class Controller {
+public class loginController {
 
 	public String login(UserVO user) {
 		// View에서 입력한 사용자 데이터 확인		
