@@ -55,6 +55,7 @@ public class Main {
 
 
 				while (true) {
+					System.out.println("===== 자 바 랜 드 =====");
 					System.out.println("[1]입장 [2]게임 룰 설명 [3]메인으로");
 					System.out.print("메뉴를 선택하세요 : ");
 					int me = sc.nextInt();
