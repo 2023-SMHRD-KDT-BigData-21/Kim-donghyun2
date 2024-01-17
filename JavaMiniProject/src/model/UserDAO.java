@@ -7,7 +7,7 @@ import java.sql.ResultSet;
 
 public class UserDAO {
 	public int Balance() {
-	      //open() 들어갈자리
+	     
 	      int bal = 0;
 	      try {
 	         String sql = "SELECT U_BALANCE FROM USER_INFO WHERE U_ID = ?";
@@ -26,4 +26,34 @@ public class UserDAO {
 	      }
 	      return bal;
 	   }
+	Connection conn = null;
+	PreparedStatement psmt = null;
+	ResultSet rs = null;
+	
+	public void getConn() {
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			
+			String url = "jdbc:oracle:thin:@localhost:1521:xe";
+			String user = "service";
+			String db_pw = "12345";
+			
+			conn = DriverManager.getConnection(url, user, db_pw);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	
+	public void getClose() {
+		try {
+			if(rs != null) rs.close();
+			if(psmt != null) psmt.close();
+			if(conn != null) conn.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+}
 }
