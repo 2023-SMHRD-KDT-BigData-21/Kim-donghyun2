@@ -22,7 +22,7 @@ public class UserDAO {
 	      } catch (Exception e) {
 	         e.printStackTrace();
 	      }finally {
-	         //close들어갈자리
+	         
 	      }
 	      return bal;
 	   }
