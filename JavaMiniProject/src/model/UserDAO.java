@@ -71,7 +71,7 @@ public class UserDAO {
 			psmt.setString(2, member.getPw());
 			psmt.setString(3, member.getName());
 			psmt.setInt(4, member.getAge());
-			psmt.setDouble(5, member.getValance());
+			psmt.setDouble(5, member.getBalance());
 
 			row = psmt.executeUpdate();
 
