@@ -8,26 +8,7 @@ import java.sql.ResultSet;
 public class UserDAO {
 	int row = 0;
 
-	public int Balance() {
-
-		int bal = 0;
-		try {
-			String sql = "SELECT U_BALANCE FROM USER_INFO WHERE U_ID = ?";
-			Connection conn = DriverManager.getConnection(sql);
-			PreparedStatement psmt = conn.prepareStatement(sql);
-			psmt.setString(1, sql);
-			ResultSet rs = psmt.executeQuery();
-			if (rs.next()) {
-				bal = rs.getInt(5);
-			}
-
-		} catch (Exception e) {
-			e.printStackTrace();
-		} finally {
-
-		}
-		return bal;
-	}
+	
 
 	Connection conn = null;
 	PreparedStatement psmt = null;
@@ -105,6 +86,28 @@ public class UserDAO {
 			getClose();
 		}
 		return name;
+	}
+	
+	//balance 불러오기
+	public int Balance(UserVO member) {
+		getConn();
+		int bal = 0;
+		try {
+			String sql = "SELECT U_BALANCE FROM USER_INFO WHERE U_ID = ?";
+			conn = DriverManager.getConnection(sql);
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, member.getId());
+			ResultSet rs = psmt.executeQuery();
+			if (rs.next()) {
+				bal = rs.getInt(5);
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			getClose();
+		}
+		return bal;
 	}
 
 }
