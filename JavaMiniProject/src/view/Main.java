@@ -5,10 +5,7 @@ import java.util.Scanner;
 public class Main {
 
 	public static void main(String[] args) {
-<<<<<<< HEAD
-		// TODO Auto-generated method stub
-		
-=======
+
 
 		Scanner sc = new Scanner(System.in);
 
@@ -44,7 +41,6 @@ public class Main {
 
 		}
 
->>>>>>> branch 'master' of https://github.com/2023-SMHRD-KDT-BigData-21/Kim-donghyun2.git
-	}
 
+}
 }
