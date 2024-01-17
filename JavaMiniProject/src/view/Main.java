@@ -12,12 +12,12 @@ public class Main {
 
 		Scanner sc = new Scanner(System.in);
 
-		System.out.println("====자바 랜드====");
+		System.out.println("====메인 메뉴====");
 		while (true) {
 			System.out.println("[1]회원가입 [2]로그인 [3]게임 종료");
 			System.out.print("메뉴를 선택하세요 : ");
-			int menu = sc.nextInt();
-			if (menu == 1) {
+			int menu1 = sc.nextInt();
+			if (menu1 == 1) {
 				joinController join = new joinController();
 				System.out.println("====회원가입====");
 				
@@ -35,7 +35,7 @@ public class Main {
 				// 초기자금은 임의 값을 넣음
 				System.out.println("회원가입에 " + result + "하셨습니다.");
 
-			} else if (menu == 2) {
+			} else if (menu1 == 2) {
 				loginController con = new loginController();
 				System.out.println("====로그인====");
 				System.out.print("ID : ");
@@ -49,34 +49,53 @@ public class Main {
 
 				if (name != null) {
 					System.out.println(name + "님 로그인 성공하셧습니다. ");
-				} else {
-					System.out.println("아이디 비밀번호를 확인해주세요~");
-				}
-
-
-				while (true) {
-					System.out.println("===== 자 바 랜 드 =====");
-					System.out.println("[1]입장 [2]게임 룰 설명 [3]메인으로");
-					System.out.print("메뉴를 선택하세요 : ");
-					int me = sc.nextInt();
-					if (me == 1) {
-						System.out.println("====게임 선택====");
-
-					} else if (me == 2) {
-						System.out.println("====룰 설명====");
-					} else if (me == 3) {
-						System.out.println("메인 페이지로 이동합니다.");
-						break;
-					} else {
-						System.out.println("올바른 번호를 입력해주세요.");
+					
+					while (true) {
+						System.out.println("===== 자 바 랜 드 =====");
+						System.out.println("[1]입장 [2]게임 룰 설명 [3]메인으로");
+						System.out.print("메뉴를 선택하세요 : ");
+						int menu2 = sc.nextInt();
+						if (menu2 == 1) { // 게임선택으로 이동
+							while (true) {
+								System.out.println("====게임 선택====");
+								System.out.println("[1]슬롯게임 [2]카드게임 [3]잔액확인 [4]뒤로가기");
+								System.out.print("메뉴를 선택하세요 : ");
+								int menu3 = sc.nextInt();
+								if (menu3 == 1) {
+									System.out.println("====슬롯게임====");
+									
+								} else if (menu3 == 2) {
+									System.out.println("====카드게임====");
+									
+								} else if (menu3 == 3) {
+									System.out.println("====잔액확인====");
+									
+								} else if (menu3 == 4) {
+									break;
+								} else {
+									System.out.println("올바른 번호를 입력해주세요.");
+								}
+							}
+							
+						} else if (menu2 == 2) {
+							System.out.println("====룰 설명====");
+						} else if (menu2 == 3) {
+							System.out.println("메인 페이지로 이동합니다.");
+							break;
+						} else {
+							System.out.println("올바른 번호를 입력해주세요.");
+						}
 					}
+					
+				} else { // 로그인 실패시 else문
+					System.out.println("아이디 비밀번호를 확인해주세요.");
 				}
 
-			} else if (menu == 3) {
+			} else if (menu1 == 3) {
 				System.out.println("프로그램을 종료합니다.");
 				break;
 			} else {
-				System.out.println("다시 입력해주세요");
+				System.out.println("올바른 번호를 입력해주세요.");
 			}
 
 		}
