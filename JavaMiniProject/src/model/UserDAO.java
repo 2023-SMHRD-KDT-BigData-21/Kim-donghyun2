@@ -6,6 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
 public class UserDAO {
+	int row = 0;
 	public int Balance() {
 	     
 	      int bal = 0;
@@ -53,6 +54,29 @@ public class UserDAO {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+	}
+	public int join(UserVO member) {
+		// DB연결 호출
+		getConn();
+		try {
+			String sql = "insert into user_info values(?,?,?,?,?)";
+
+			psmt = conn.prepareStatement(sql);
+
+			psmt.setString(1, member.getId());
+			psmt.setString(2, member.getPw());
+			psmt.setString(3, member.getName());
+			psmt.setInt(4, member.getAge());
+			psmt.setDouble(5, member.getValance());
+
+			row = psmt.executeUpdate();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			getClose();
+		}
+		return row;
 	}
 	
 
