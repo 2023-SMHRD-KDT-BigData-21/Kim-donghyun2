@@ -199,8 +199,7 @@ public class Main {
 
 
 
-									System.out.println("[1]게임설명 [2]실행  [3]뒤로가기");
-									System.out.print("메뉴를 선택하세요 : ");
+									
 
 
 
