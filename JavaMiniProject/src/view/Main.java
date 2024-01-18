@@ -30,7 +30,7 @@ public class Main {
 				String name = sc.next();
 				System.out.print("Age : ");
 				int age = sc.nextInt();
-				double balance = 10000;
+				int balance = 10000;
 
 				String result = join.joinCon(new UserVO(id, pw, name, age, balance));
 				// 초기자금은 임의 값을 넣음
@@ -72,7 +72,7 @@ public class Main {
 									System.out.println("====잔액확인====");
 									BalanceController bc = new BalanceController();
 									UserVO uv = new UserVO(id);
-									double bal = bc.getBalance(uv);
+									int bal = bc.getBalance(uv);
 									
 									System.out.println("잔액은 : " + bal + "원입니다.");
 									

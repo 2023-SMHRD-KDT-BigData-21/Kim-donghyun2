@@ -4,10 +4,10 @@ import model.UserDAO;
 import model.UserVO;
 
 public class BalanceController {
-	public double getBalance(UserVO member) {
+	public int getBalance(UserVO member) {
 		
 		UserDAO dao = new UserDAO();
-		double bal = dao.Balance(member);
+		int bal = dao.Balance(member);
 		return bal;
 		
 		

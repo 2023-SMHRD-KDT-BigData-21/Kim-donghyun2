@@ -89,16 +89,16 @@ public class UserDAO {
 	}
 	
 	//balance 불러오기
-	public double Balance(UserVO member) {
+	public int Balance(UserVO member) {
 		getConn();
-		double bal = 0;
+		int bal = 0;
 		try {
 			String sql = "SELECT U_BALANCE FROM USER_INFO WHERE U_ID = ?";
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, member.getId());
 			rs = psmt.executeQuery();
 			while (rs.next()) {
-				bal = rs.getDouble(1);
+				bal = rs.getInt(1);
 				
 			}
 
