@@ -6,11 +6,38 @@ public class UserVO {
 	private String pw;
 	private String name;
 	private int age;
+	private int balance;
 
-	private double bet;
-	private double balance;
+	
+ 
+   
+   public UserVO(String id, String pw, String name, int age) {
+      this.id = id;
+      this.pw = pw;
+      this.name = name;
+      this.age = age;
+   }
+   
+   public UserVO(String id, String pw) {
+      this.id = id;
+      this.pw = pw;      
+   }
+   
+   public UserVO(String id) {
+      this.id = id;
+   }
 
-	public UserVO(String id, String pw, String name, int age, double balance) {
+  
+   public UserVO(String str, int balance) {
+		this.id = str;
+		this.name = str;
+		this.balance = balance;
+	}
+
+
+	
+
+	public UserVO(String id, String pw, String name, int age, int balance) {
 		this.id = id;
 		this.pw = pw;
 		this.name = name;
@@ -18,19 +45,19 @@ public class UserVO {
 		this.balance = balance;
 	}
 
-	public UserVO(double balance) {
+	public UserVO(int balance) {
 
 		this.balance = balance;
 	}
+	
 
-	public UserVO(String id, String pw) {
-		this.id = id;
-		this.pw = pw;
-	}
 
-	public UserVO(String id) {
-		this.id = id;
-	}
+   public double getValance() {
+      return balance;
+   }
+   
+   
+
 
 	public String getId() {
 		return id;
@@ -48,12 +75,9 @@ public class UserVO {
 		return age;
 	}
 
-	public double getBalance() {
+	public int getBalance() {
 		return balance;
 	}
 
-	public double getBet() {
-		return bet;
-	}
 
 }
