@@ -22,6 +22,6 @@ public class RuleCon {
 		System.out.println("5. 슬롯머신은 5 페이라인 으로 만들어졌습니다.");
 	}
 	public void rule() {
-		
+		System.out.println("자바랜드 룰");
 	}
 }

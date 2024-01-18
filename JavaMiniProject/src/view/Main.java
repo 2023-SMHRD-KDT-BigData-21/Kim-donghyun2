@@ -4,9 +4,12 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 import controller.BalanceController;
-import controller.SlotCon;
 import controller.RankingCon;
 import controller.RuleCon;
+
+import controller.SlotCon;
+import controller.SoundCon;
+
 import controller.joinController;
 import controller.loginController;
 import javazoom.jl.player.MP3Player;
@@ -17,10 +20,11 @@ public class Main {
 	public static void main(String[] args) {
 
 		Scanner sc = new Scanner(System.in);
-	;
+	
 		MP3Player mp3 = new MP3Player();
 		System.out.println("====메인 메뉴====");
 		while (true) {
+
 			System.out.println("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣠⣤⣄⣠⣄⣀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n"
 					+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣤⣶⣶⠾⠿⠛⠛⠋⠉⣿⠏⠙⠛⠛⠿⠿⣶⣦⣤⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n"
 					+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣴⣾⣏⠀⠀⠀⠀⠀⠀⠀⠀⡿⠀⠀⠀⠀⠀⠀⠀⠀⢉⣿⣧⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n"
@@ -41,6 +45,10 @@ public class Main {
 					+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀");
 			
 			mp3.play("bgm\\y2mate.com - MV IU아이유Coin.mp3");
+
+			SoundCon soc = new SoundCon();
+			soc.playSound("src/audio/금전등록기.wav", false);
+
 			System.out.println("[1]회원가입 [2]로그인 [3]게임 종료");
 			System.out.print("메뉴를 선택하세요 : ");
 			int menu1 = sc.nextInt();
@@ -83,7 +91,9 @@ public class Main {
 						System.out.println("[1]입장 [2]게임 룰 설명 [3]메인으로");
 						System.out.print("메뉴를 선택하세요 : ");
 						int menu2 = sc.nextInt();
-						if (menu2 == 1) { // 게임선택으로 이동
+
+						if (menu2 == 1) {
+							// 게임선택으로 이동
 							while (true) {
 								System.out.println("====게임 선택====");
 								System.out.println("[1]슬롯게임 [2]카드게임 [3]잔액확인 [4]랭킹확인 [5]뒤로가기");
@@ -96,7 +106,9 @@ public class Main {
 									// bal 불러와서 bet값만큼 차감 후 업데이트;
 									// 실패시 bal-bet 업데이트
 									// 만약 성공하면 bet * 배당만큼해서 한번 더 업데이트
+									System.out.println();
 									System.out.println("====슬롯게임====");
+
 									System.out.println("\n"
 											+ "⠀⠀⠀⠀⠀⠀⣟⣛⡛⣛⣛⣛⡛⣛⣛⣛⣛⣛⡛⣛⣛⣛⣛⣛⣛⣛⣛⡛⣛⣛⣛⡛⣛⣛⡛⣛⣛⢛⢟⢿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n"
 											+ "⠀⠀⠀⠀⠀⠐⡧⡉⣮⡬⡩⢦⡭⡩⢦⡎⢼⡜⢋⠉⢩⣭⣭⣭⢭⡍⢉⠙⣮⡕⢬⡎⡝⣤⡭⡩⣪⡕⣝⢽⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀\n"
@@ -124,11 +136,14 @@ public class Main {
 											+ "⠀⠀⠀⠀⠀⠀⢷⣨⣪⣕⣕⣕⣕⣕⣕⣙⣎⣝⣱⣙⣎⣓⣝⣪⣓⣝⣪⣣⣫⣪⣪⣒⣕⣕⣕⣕⣕⣕⣎⡿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n"
 											+ "⠀⠀⠀⠀⠀⠀⠀⠉⢾⣜⣮⢮⣞⡎⠉⠉⠈⠉⠁⠉⠈⠉⠈⠁⠉⠈⠁⠁⠁⠉⠈⠁⢹⣮⢮⡮⣮⣧⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n"
 											+ "");
+
+									System.out.println();
+
 									BalanceController bc = new BalanceController();
 									UserVO uv = new UserVO(id);
 									int bal = bc.getBalance(uv);
 									System.out.println(name + "님의 최대배팅 가능 금액은" + bal + " 원입니다.");
-									System.out.println("배팅할 금액을 입력해주세요: ");
+									System.out.print("배팅할 금액을 입력해주세요: ");
 									int bet = sc.nextInt();
 									if (bal < bet) {
 										System.out.println("잔액이 부족합니다.");
@@ -176,6 +191,11 @@ public class Main {
 											+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⢿⣦⣤⣤⣤⣤⣤⣤⣤⣤⣤⣤⣤⣠⣄⣤⣠⣄⣄⣄⣄⣠⣀⣄⣄⣄⣄⣄⣄⣄⣼⡿⠀⠀⠀⠀⠀⠀⠀⠀⠀\n"
 											+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n" + "");
 									System.out.println("====카드게임====");
+
+									System.out.println("[1]게임설명 [2]실행  [3]뒤로가기");
+									System.out.print("메뉴를 선택하세요 : ");
+
+
 								} else if (menu3 == 3) {
 									System.out.println("====잔액확인====");
 									BalanceController bc = new BalanceController();
@@ -204,10 +224,13 @@ public class Main {
 									System.out.println("올바른 번호를 입력해주세요.");
 								}
 							}
-
 						} else if (menu2 == 2) {
 							System.out.println("====룰 설명====");
-						
+
+							RuleCon ru = new RuleCon();
+							ru.cardrule();
+							ru.slotrule();
+
 						} else if (menu2 == 3) {
 							System.out.println("메인 페이지로 이동합니다.");
 							break;
