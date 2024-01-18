@@ -53,7 +53,7 @@ public class Main {
 			mp3.play("bgm\\y2mate.com - MV IU아이유Coin.mp3");
 
 			SoundCon soc = new SoundCon();
-			soc.playSound("src/audio/금전등록기.wav", false);
+			
 
 			System.out.println("[1]회원가입 [2]로그인 [3]게임 종료");
 			System.out.print("메뉴를 선택하세요 : ");
@@ -91,6 +91,7 @@ public class Main {
 
 				if (name != null) {
 					System.out.println(name + "님 로그인 성공하셧습니다. ");
+					mp3.stop();
 
 					while (true) {
 						System.out.println("===== 자 바 랜 드 =====");
@@ -223,7 +224,7 @@ public class Main {
 											System.out.println("-" + betresult + "원");
 										} else if (betresult == bet - 1) {
 											System.out.println("투입하신 금액이 반환됩니다.");
-											System.out.println(betresult + "원" + "이 반환되었습니다.");
+											System.out.println(bet + "원" + "이 반환되었습니다.");
 										} else {
 											int resultSuccess = bal - bet + betresult;
 											UserVO betSuc = new UserVO(id, resultSuccess);
