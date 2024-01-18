@@ -4,8 +4,9 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 import controller.BalanceController;
-import controller.SlotCon;
 import controller.RankingCon;
+import controller.RuleCon;
+import controller.SlotCon;
 import controller.joinController;
 import controller.loginController;
 import model.UserVO;
@@ -59,7 +60,11 @@ public class Main {
 						System.out.println("[1]입장 [2]게임 룰 설명 [3]메인으로");
 						System.out.print("메뉴를 선택하세요 : ");
 						int menu2 = sc.nextInt();
+						
 						if (menu2 == 1) { // 게임선택으로 이동
+						} else if (menu2 == 2) {
+							RuleCon ru = new RuleCon();
+							ru.rule();
 							while (true) {
 								System.out.println("====게임 선택====");
 								System.out.println("[1]슬롯게임 [2]카드게임 [3]잔액확인 [4]랭킹확인 [5]뒤로가기");
@@ -72,13 +77,24 @@ public class Main {
 									// bal 불러와서 bet값만큼 차감 후 업데이트;
 									// 실패시 bal-bet 업데이트
 									// 만약 성공하면 bet * 배당만큼해서 한번 더 업데이트
+									System.out.println();
 									System.out.println("====슬롯게임====");
+									System.out.println("[1]게임설명 [2]실행  [3]뒤로가기");
+									System.out.print("메뉴를 선택하세요 : ");
+									int menu4 = sc.nextInt();
+									 ru = new RuleCon();
+									if (menu4 == 1) {
+										ru.slotrule();
 
+									} else if (menu4 == 2) {
+
+									}
+									System.out.println();
 									BalanceController bc = new BalanceController();
 									UserVO uv = new UserVO(id);
 									int bal = bc.getBalance(uv);
 									System.out.println(name + "님의 최대배팅 가능 금액은" + bal + " 원입니다.");
-									System.out.println("배팅할 금액을 입력해주세요: ");
+									System.out.print("배팅할 금액을 입력해주세요: ");
 									int bet = sc.nextInt();
 									if (bal < bet) {
 										System.out.println("잔액이 부족합니다.");
@@ -101,7 +117,18 @@ public class Main {
 
 								} else if (menu3 == 2) {
 									System.out.println("====카드게임====");
+									System.out.println("[1]게임설명 [2]실행  [3]뒤로가기");
+									System.out.print("메뉴를 선택하세요 : ");
+									int menu5 = sc.nextInt();
+									ru = new RuleCon();
 
+									if (menu5 == 1) {
+										ru.cardrule();
+										System.out.println();
+
+									} else if (menu5 == 2) {
+
+									}
 								} else if (menu3 == 3) {
 									System.out.println("====잔액확인====");
 									BalanceController bc = new BalanceController();
@@ -110,14 +137,11 @@ public class Main {
 
 									System.out.println(name + "님의 잔액은 : " + bal + "원입니다.");
 
-								
-									
-
 								} else if (menu3 == 4) {
 									RankingCon rc = new RankingCon();
 									System.out.println("====랭킹확인====");
 									ArrayList<UserVO> list = rc.rankingList();
-									int ranking =1;
+									int ranking = 1;
 
 									System.out.println("== Play List ==");
 									for (UserVO ranker : list) {
@@ -126,7 +150,7 @@ public class Main {
 										System.out.println(" 자산 : " + ranker.getBalance() + "원");
 										ranking++;
 
-								} 
+									}
 								} else if (menu3 == 5) {
 									break;
 								} else {
