@@ -18,7 +18,7 @@ public class Main {
 	public static void main(String[] args) {
 
 		Scanner sc = new Scanner(System.in);
-
+		RuleCon ru = new RuleCon();
 		System.out.println("====메인 메뉴====");
 		while (true) {
 			SoundCon soc = new SoundCon();
@@ -65,8 +65,7 @@ public class Main {
 						System.out.print("메뉴를 선택하세요 : ");
 						int menu2 = sc.nextInt();
 
-						if (menu2 == 1) {
-							// 게임선택으로 이동
+						if (menu2 == 1) { // 게임선택으로 이동
 							while (true) {
 								System.out.println("====게임 선택====");
 								System.out.println("[1]슬롯게임 [2]카드게임 [3]잔액확인 [4]랭킹확인 [5]뒤로가기");
@@ -165,7 +164,6 @@ public class Main {
 							}
 						} else if (menu2 == 2) {
 							System.out.println("====룰 설명====");
-							RuleCon ru = new RuleCon();
 							ru.cardrule();
 							ru.slotrule();
 						} else if (menu2 == 3) {
