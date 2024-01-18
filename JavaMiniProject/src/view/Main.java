@@ -2,6 +2,7 @@ package view;
 
 import java.util.Scanner;
 
+import controller.BalanceController;
 import controller.joinController;
 import controller.loginController;
 import model.UserVO;
@@ -69,6 +70,11 @@ public class Main {
 									
 								} else if (menu3 == 3) {
 									System.out.println("====잔액확인====");
+									BalanceController bc = new BalanceController();
+									UserVO uv = new UserVO(id);
+									double bal = bc.getBalance(uv);
+									
+									System.out.println("잔액은 : " + bal + "원입니다.");
 									
 								} else if (menu3 == 4) {
 									break;
