@@ -116,7 +116,7 @@ public class Main {
 								}else if(menu3 == 4) {
 									RankingCon rc = new RankingCon();
 									System.out.println("====랭킹확인====");
-									ArrayList<UserVO> list = rc.musicList();
+									ArrayList<UserVO> list = rc.rankingList();
 									int ranking =1;
 									System.out.println("== Play List ==");
 									for (UserVO ranker:list) {
