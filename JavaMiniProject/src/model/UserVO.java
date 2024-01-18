@@ -18,8 +18,8 @@ public class UserVO {
 		this.balance = balance;
 	}
 
-	public UserVO(double bet, double balance) {
-		this.bet = bet;
+	public UserVO(double balance) {
+		
 		this.balance = balance;
 	}
 

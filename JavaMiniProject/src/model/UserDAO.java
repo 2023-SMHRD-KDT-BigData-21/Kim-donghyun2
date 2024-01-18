@@ -92,12 +92,12 @@ public class UserDAO {
 		int bal = 0;
 		try {
 			String sql = "SELECT U_BALANCE FROM USER_INFO WHERE U_ID = ?";
-			conn = DriverManager.getConnection(sql);
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, member.getId());
-			ResultSet rs = psmt.executeQuery();
-			if (rs.next()) {
-				bal = rs.getInt(5);
+			rs = psmt.executeQuery();
+			while (rs.next()) {
+				bal = rs.getInt(1);
+				
 			}
 
 		} catch (Exception e) {

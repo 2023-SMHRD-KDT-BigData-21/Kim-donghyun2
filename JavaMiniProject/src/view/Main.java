@@ -2,6 +2,7 @@ package view;
 
 import java.util.Scanner;
 
+import controller.BalanceController;
 import controller.joinController;
 import controller.loginController;
 import model.UserVO;
@@ -29,7 +30,7 @@ public class Main {
 				String name = sc.next();
 				System.out.print("Age : ");
 				int age = sc.nextInt();
-				double balance = 10000;
+				int balance = 10000;
 
 				String result = join.joinCon(new UserVO(id, pw, name, age, balance));
 				// 초기자금은 임의 값을 넣음
@@ -58,7 +59,7 @@ public class Main {
 						if (menu2 == 1) { // 게임선택으로 이동
 							while (true) {
 								System.out.println("====게임 선택====");
-								System.out.println("[1]슬롯게임 [2]카드게임 [3]잔액확인 [4]뒤로가기");
+								System.out.println("[1]슬롯게임 [2]카드게임 [3]잔액확인 [4]랭킹확인 [5]뒤로가기");
 								System.out.print("메뉴를 선택하세요 : ");
 								int menu3 = sc.nextInt();
 								if (menu3 == 1) {
@@ -69,8 +70,16 @@ public class Main {
 									
 								} else if (menu3 == 3) {
 									System.out.println("====잔액확인====");
+									BalanceController bc = new BalanceController();
+									UserVO uv = new UserVO(id);
+									int bal = bc.getBalance(uv);
 									
-								} else if (menu3 == 4) {
+									System.out.println("잔액은 : " + bal + "원입니다.");
+									
+								}else if(menu3 == 4) {
+									System.out.println("====랭킹확인====");
+								}
+								else if (menu3 == 5) {
 									break;
 								} else {
 									System.out.println("올바른 번호를 입력해주세요.");
