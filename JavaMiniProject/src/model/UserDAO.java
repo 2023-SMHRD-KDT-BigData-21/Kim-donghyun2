@@ -109,5 +109,25 @@ public class UserDAO {
 		}
 		return bal;
 	}
+	//balance 업데이트 - 배팅 성공/실패 시 금액변경
+	public int balanceUpdate(UserVO member) {
+		getConn();
+		int bal = 0;
+		try {
+			String sql = "UPDATE USER_INFO SET U_BALANCE = ? WHERE U_ID = ?";
+			psmt = conn.prepareStatement(sql);
+		
+			psmt.setInt(1, member.getBalance());
+			psmt.setString(2, member.getId());
+			psmt.executeUpdate();
+			
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			getClose();
+		}
+		return bal;
+	}
 
 }

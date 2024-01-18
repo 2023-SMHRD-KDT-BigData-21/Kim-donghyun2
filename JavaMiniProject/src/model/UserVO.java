@@ -6,11 +6,9 @@ public class UserVO {
 	private String pw;
 	private String name;
 	private int age;
+	private int balance;
 
-	private double bet;
-	private double balance;
-
-	public UserVO(String id, String pw, String name, int age, double balance) {
+	public UserVO(String id, String pw, String name, int age, int balance) {
 		this.id = id;
 		this.pw = pw;
 		this.name = name;
@@ -18,8 +16,8 @@ public class UserVO {
 		this.balance = balance;
 	}
 
-	public UserVO(double balance) {
-		
+	public UserVO(String id, int balance) {
+		this.id = id;
 		this.balance = balance;
 	}
 
@@ -48,12 +46,9 @@ public class UserVO {
 		return age;
 	}
 
-	public double getBalance() {
+	public int getBalance() {
 		return balance;
 	}
 
-	public double getBet() {
-		return bet;
-	}
 
 }

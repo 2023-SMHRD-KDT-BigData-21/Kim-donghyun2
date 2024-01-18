@@ -12,5 +12,15 @@ public class BalanceController {
 		
 		
 	}
+	
+	public String updateBalance(UserVO member) {
+		UserDAO dao = new UserDAO();
+		int row = dao.balanceUpdate(member);
+		
+		if(row>0)
+			return "성공";
+		else
+			return "실패";
+	}
 
 }
