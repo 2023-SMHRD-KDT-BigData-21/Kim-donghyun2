@@ -16,7 +16,7 @@ public class Main {
 	public static void main(String[] args) {
 
 		Scanner sc = new Scanner(System.in);
-
+		RuleCon ru = new RuleCon();
 		System.out.println("====메인 메뉴====");
 		while (true) {
 			System.out.println("[1]회원가입 [2]로그인 [3]게임 종료");
@@ -60,11 +60,8 @@ public class Main {
 						System.out.println("[1]입장 [2]게임 룰 설명 [3]메인으로");
 						System.out.print("메뉴를 선택하세요 : ");
 						int menu2 = sc.nextInt();
-						
+
 						if (menu2 == 1) { // 게임선택으로 이동
-						} else if (menu2 == 2) {
-							RuleCon ru = new RuleCon();
-							ru.rule();
 							while (true) {
 								System.out.println("====게임 선택====");
 								System.out.println("[1]슬롯게임 [2]카드게임 [3]잔액확인 [4]랭킹확인 [5]뒤로가기");
@@ -79,15 +76,12 @@ public class Main {
 									// 만약 성공하면 bet * 배당만큼해서 한번 더 업데이트
 									System.out.println();
 									System.out.println("====슬롯게임====");
-									System.out.println("[1]게임설명 [2]실행  [3]뒤로가기");
+									System.out.println("[1]게임설명 ");
 									System.out.print("메뉴를 선택하세요 : ");
 									int menu4 = sc.nextInt();
-									 ru = new RuleCon();
+									ru = new RuleCon();
 									if (menu4 == 1) {
 										ru.slotrule();
-
-									} else if (menu4 == 2) {
-
 									}
 									System.out.println();
 									BalanceController bc = new BalanceController();
@@ -117,7 +111,7 @@ public class Main {
 
 								} else if (menu3 == 2) {
 									System.out.println("====카드게임====");
-									System.out.println("[1]게임설명 [2]실행  [3]뒤로가기");
+									System.out.println("[1]게임설명 ");
 									System.out.print("메뉴를 선택하세요 : ");
 									int menu5 = sc.nextInt();
 									ru = new RuleCon();
@@ -125,9 +119,6 @@ public class Main {
 									if (menu5 == 1) {
 										ru.cardrule();
 										System.out.println();
-
-									} else if (menu5 == 2) {
-
 									}
 								} else if (menu3 == 3) {
 									System.out.println("====잔액확인====");
@@ -160,6 +151,7 @@ public class Main {
 
 						} else if (menu2 == 2) {
 							System.out.println("====룰 설명====");
+							ru.rule();
 						} else if (menu2 == 3) {
 							System.out.println("메인 페이지로 이동합니다.");
 							break;
