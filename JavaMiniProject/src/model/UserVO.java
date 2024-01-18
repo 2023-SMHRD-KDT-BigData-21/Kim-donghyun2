@@ -26,11 +26,11 @@ public class UserVO {
    public UserVO(String id) {
       this.id = id;
    }
-   public UserVO(String id, int balance) {
-	   this.id = id;
+   public UserVO(String name, int balance) {
+	   this.name = name;
 	   this.balance=balance;
    }
-
+  
 
 	
 

@@ -52,7 +52,7 @@ public class UserDAO {
 		try {
 
 			
-			String sqlQuery = "SELECT u_id,u_balance from user_info where rownum<=10 order by u_balance desc;";
+			String sqlQuery = "SELECT u_name,u_balance from user_info where rownum<=10 order by u_balance desc";
 
 			psmt = conn.prepareStatement(sqlQuery);
 
@@ -61,10 +61,10 @@ public class UserDAO {
 
 			while (rs.next()) {
 
-				String id = rs.getString(1);
+				String name = rs.getString(1);
 				int balance = rs.getInt(2);
 
-				list.add(new UserVO(id, balance));
+				list.add(new UserVO(name, balance));
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
