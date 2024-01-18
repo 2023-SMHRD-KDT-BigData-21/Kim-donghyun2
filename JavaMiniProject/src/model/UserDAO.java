@@ -4,6 +4,10 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+
+
 
 public class UserDAO {
 	public int Balance() {
@@ -54,6 +58,34 @@ public class UserDAO {
 			e.printStackTrace();
 		}
 	}
-	
-}
+	public ArrayList<UserVO> getRankingList() {
+		ArrayList<UserVO> list=new ArrayList();
+		getConn();
+
+		try {
+
+			
+			String sqlQuery = "SELECT u_id,u_balance from user_info where rownum<=10 order by u_balance desc;";
+
+			psmt = conn.prepareStatement(sqlQuery);
+
+			rs = psmt.executeQuery();
+
+
+			while (rs.next()) {
+
+				String id = rs.getString(1);
+				int balance = rs.getInt(2);
+
+				list.add(new UserVO(id, balance));
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			getClose();
+			
+		}
+		return list;
+	}
+
 }

@@ -7,7 +7,7 @@ public class UserVO {
    private String name;
    private int age;
    
-   private double valance;
+   private double balance;
    
    public UserVO(String id, String pw, String name, int age) {
       this.id = id;
@@ -23,6 +23,10 @@ public class UserVO {
    
    public UserVO(String id) {
       this.id = id;
+   }
+   public UserVO(String id, int balance) {
+	   this.id = id;
+	   this.balance=balance;
    }
 
    public String getId() {
@@ -42,7 +46,7 @@ public class UserVO {
    }
 
    public double getValance() {
-      return valance;
+      return balance;
    }
    
    
