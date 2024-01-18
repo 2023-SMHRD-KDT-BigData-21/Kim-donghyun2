@@ -21,7 +21,7 @@ public class Main {
 			if (menu1 == 1) {
 				joinController join = new joinController();
 				System.out.println("====회원가입====");
-				
+
 				System.out.print("ID : ");
 				String id = sc.next();
 				System.out.print("Pw : ");
@@ -43,14 +43,14 @@ public class Main {
 				String id = sc.next();
 				System.out.print("PW : ");
 				String pw = sc.next();
-				
+
 				UserVO user = new UserVO(id, pw);
 
 				String name = con.login(user);
 
 				if (name != null) {
 					System.out.println(name + "님 로그인 성공하셧습니다. ");
-					
+
 					while (true) {
 						System.out.println("===== 자 바 랜 드 =====");
 						System.out.println("[1]입장 [2]게임 룰 설명 [3]메인으로");
@@ -64,28 +64,27 @@ public class Main {
 								int menu3 = sc.nextInt();
 								if (menu3 == 1) {
 									System.out.println("====슬롯게임====");
-									
+
 								} else if (menu3 == 2) {
 									System.out.println("====카드게임====");
-									
+
 								} else if (menu3 == 3) {
 									System.out.println("====잔액확인====");
 									BalanceController bc = new BalanceController();
 									UserVO uv = new UserVO(id);
 									int bal = bc.getBalance(uv);
-									
+
 									System.out.println("잔액은 : " + bal + "원입니다.");
-									
-								}else if(menu3 == 4) {
+
+								} else if (menu3 == 4) {
 									System.out.println("====랭킹확인====");
-								}
-								else if (menu3 == 5) {
+								} else if (menu3 == 5) {
 									break;
 								} else {
 									System.out.println("올바른 번호를 입력해주세요.");
 								}
 							}
-							
+
 						} else if (menu2 == 2) {
 							System.out.println("====룰 설명====");
 						} else if (menu2 == 3) {
@@ -95,7 +94,7 @@ public class Main {
 							System.out.println("올바른 번호를 입력해주세요.");
 						}
 					}
-					
+
 				} else { // 로그인 실패시 else문
 					System.out.println("아이디 비밀번호를 확인해주세요.");
 				}

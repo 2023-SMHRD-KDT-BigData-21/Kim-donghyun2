@@ -19,7 +19,7 @@ public class UserVO {
 	}
 
 	public UserVO(double balance) {
-		
+
 		this.balance = balance;
 	}
 

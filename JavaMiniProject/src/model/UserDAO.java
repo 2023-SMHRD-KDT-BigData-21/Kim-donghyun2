@@ -97,7 +97,7 @@ public class UserDAO {
 			rs = psmt.executeQuery();
 			while (rs.next()) {
 				bal = rs.getInt(1);
-				
+
 			}
 
 		} catch (Exception e) {
