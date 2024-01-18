@@ -110,14 +110,11 @@ public class Main {
 
 									System.out.println(name + "님의 잔액은 : " + bal + "원입니다.");
 
-								
-									
-
 								} else if (menu3 == 4) {
 									RankingCon rc = new RankingCon();
 									System.out.println("====랭킹확인====");
 									ArrayList<UserVO> list = rc.rankingList();
-									int ranking =1;
+									int ranking = 1;
 
 									System.out.println("== Play List ==");
 									for (UserVO ranker : list) {
@@ -126,7 +123,7 @@ public class Main {
 										System.out.println(" 자산 : " + ranker.getBalance() + "원");
 										ranking++;
 
-								} 
+									}
 								} else if (menu3 == 5) {
 									break;
 								} else {
