@@ -8,8 +8,6 @@ import java.sql.ResultSet;
 public class UserDAO {
 	int row = 0;
 
-	
-
 	Connection conn = null;
 	PreparedStatement psmt = null;
 	ResultSet rs = null;
@@ -87,8 +85,8 @@ public class UserDAO {
 		}
 		return name;
 	}
-	
-	//balance 불러오기
+
+	// balance 불러오기
 	public int Balance(UserVO member) {
 		getConn();
 		int bal = 0;
