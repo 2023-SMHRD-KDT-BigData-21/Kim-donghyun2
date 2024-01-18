@@ -195,7 +195,7 @@ public class Main {
 											+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⢿⣦⣤⣤⣤⣤⣤⣤⣤⣤⣤⣤⣤⣠⣄⣤⣠⣄⣄⣄⣄⣠⣀⣄⣄⣄⣄⣄⣄⣄⣼⡿⠀⠀⠀⠀⠀⠀⠀⠀⠀\n"
 											+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n" + "");
 									System.out.println("====카드게임====");
-<<<<<<< HEAD
+
 
 
 									System.out.println("[1]게임설명 [2]실행  [3]뒤로가기");
@@ -203,7 +203,7 @@ public class Main {
 
 
 
-=======
+
 									BalanceController bc = new BalanceController();
 									UserVO uv = new UserVO(id);
 									int bal = bc.getBalance(uv);
@@ -231,7 +231,7 @@ public class Main {
 											System.out.println("+" +betresult + "원");
 										}
 									}
->>>>>>> branch 'master' of https://github.com/2023-SMHRD-KDT-BigData-21/Kim-donghyun2.git
+
 								} else if (menu3 == 3) {
 									System.out.println("====잔액확인====");
 									BalanceController bc = new BalanceController();
