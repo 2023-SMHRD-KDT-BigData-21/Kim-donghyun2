@@ -8,7 +8,7 @@ import model.UserVO;
 
 public class RankingCon {
 	ArrayList<UserVO> list= new UserDAO().getRankingList();
-	public ArrayList<UserVO> musicList(){
+	public ArrayList<UserVO> rankingList(){
 		return list;
 	}
 }

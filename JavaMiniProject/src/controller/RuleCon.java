@@ -21,4 +21,7 @@ public class RuleCon {
 		System.out.println("4. 페이라인: 슬롯머신에는 V, M, W, l 의 페이라인이 있습니다.");
 		System.out.println("5. 슬롯머신은 5 페이라인 으로 만들어졌습니다.");
 	}
+	public void rule() {
+		
+	}
 }
