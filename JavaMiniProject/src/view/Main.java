@@ -59,7 +59,7 @@ public class Main {
 						if (menu2 == 1) { // 게임선택으로 이동
 							while (true) {
 								System.out.println("====게임 선택====");
-								System.out.println("[1]슬롯게임 [2]카드게임 [3]잔액확인 [4]뒤로가기");
+								System.out.println("[1]슬롯게임 [2]카드게임 [3]잔액확인 [4]랭킹확인 [5]뒤로가기");
 								System.out.print("메뉴를 선택하세요 : ");
 								int menu3 = sc.nextInt();
 								if (menu3 == 1) {
@@ -76,7 +76,10 @@ public class Main {
 									
 									System.out.println("잔액은 : " + bal + "원입니다.");
 									
-								} else if (menu3 == 4) {
+								}else if(menu3 == 4) {
+									System.out.println("====랭킹확인====");
+								}
+								else if (menu3 == 5) {
 									break;
 								} else {
 									System.out.println("올바른 번호를 입력해주세요.");
