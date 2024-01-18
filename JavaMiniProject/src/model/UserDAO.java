@@ -4,6 +4,10 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+
+
 
 public class UserDAO {
 	int row = 0;
@@ -41,6 +45,36 @@ public class UserDAO {
 		}
 	}
 
+	public ArrayList<UserVO> getRankingList() {
+		ArrayList<UserVO> list=new ArrayList();
+		getConn();
+
+		try {
+
+			
+			String sqlQuery = "SELECT u_name,u_balance from user_info where rownum<=10 order by u_balance desc";
+
+			psmt = conn.prepareStatement(sqlQuery);
+
+			rs = psmt.executeQuery();
+
+
+			while (rs.next()) {
+
+				String name = rs.getString(1);
+				int balance = rs.getInt(2);
+
+				list.add(new UserVO(name, balance));
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			getClose();
+			
+		}
+		return list;
+
+	}
 	public int join(UserVO member) {
 		// DB연결 호출
 		getConn();
@@ -108,6 +142,7 @@ public class UserDAO {
 			getClose();
 		}
 		return bal;
+
 	}
 	//balance 업데이트 - 배팅 성공/실패 시 금액변경
 	public int balanceUpdate(UserVO member) {

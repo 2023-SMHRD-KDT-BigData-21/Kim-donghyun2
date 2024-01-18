@@ -1,9 +1,11 @@
 package view;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 import controller.BalanceController;
 import controller.SlotCon;
+import controller.RankingCon;
 import controller.joinController;
 import controller.loginController;
 import model.UserVO;
@@ -60,7 +62,7 @@ public class Main {
 						if (menu2 == 1) { // 게임선택으로 이동
 							while (true) {
 								System.out.println("====게임 선택====");
-								System.out.println("[1]슬롯게임 [2]카드게임 [3]잔액확인 [4]뒤로가기");
+								System.out.println("[1]슬롯게임 [2]카드게임 [3]잔액확인 [4]랭킹확인 [5]뒤로가기");
 								System.out.print("메뉴를 선택하세요 : ");
 								int menu3 = sc.nextInt();
 								if (menu3 == 1) {
@@ -111,7 +113,20 @@ public class Main {
 									
 									System.out.println(name + "님의 잔액은 : " + bal + "원입니다.");
 									
-								} else if (menu3 == 4) {
+								}else if(menu3 == 4) {
+									RankingCon rc = new RankingCon();
+									System.out.println("====랭킹확인====");
+									ArrayList<UserVO> list = rc.musicList();
+									int ranking =1;
+									System.out.println("== Play List ==");
+									for (UserVO ranker:list) {
+											
+										System.out.print(ranking+"위. 닉네임: "+ranker.getName());
+										System.out.println(" 자산 : "+ranker.getBalance()+"원");
+										ranking++;
+									}
+								}
+								else if (menu3 == 5) {
 									break;
 								} else {
 									System.out.println("올바른 번호를 입력해주세요.");
