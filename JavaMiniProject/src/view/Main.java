@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 import controller.BalanceController;
+import controller.CardCon;
 import controller.RankingCon;
 import controller.RuleCon;
 
@@ -154,20 +155,19 @@ public class Main {
 									} else {
 										SlotCon slc = new SlotCon();
 										int betresult = slc.slotResult(bet);
-										System.out.println(betresult + "원");
 										if (betresult == bet) {
 											int resultFail = bal - bet;
 											UserVO betFail = new UserVO(id, resultFail);
 											bc.updateBalance(betFail);
+											System.out.println("-" + betresult + "원");
 
 										} else {
 											int resultSuccess = bal - bet + betresult;
 											UserVO betSuc = new UserVO(id, resultSuccess);
 											bc.updateBalance(betSuc);
+											System.out.println("+" + betresult + "원");
 										}
-
 									}
-
 								} else if (menu3 == 2) {
 									System.out.println("\n" + "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀					⠀⠀⠀⠀⠀⠀⠀⠀⠀\n"
 											+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⣾⠟⠉⠋⠙⠉⠋⠙⠉⠋⠙⠉⠋⠙⠉⠋⠙⠉⠋⠙⠉⠋⠙⠉⠋⠙⠉⠋⠙⠉⠻⣷⠀⠀⠀⠀⠀⠀⠀⠀⠀\n"
@@ -195,6 +195,7 @@ public class Main {
 											+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⢿⣦⣤⣤⣤⣤⣤⣤⣤⣤⣤⣤⣤⣠⣄⣤⣠⣄⣄⣄⣄⣠⣀⣄⣄⣄⣄⣄⣄⣄⣼⡿⠀⠀⠀⠀⠀⠀⠀⠀⠀\n"
 											+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n" + "");
 									System.out.println("====카드게임====");
+<<<<<<< HEAD
 
 
 									System.out.println("[1]게임설명 [2]실행  [3]뒤로가기");
@@ -202,6 +203,35 @@ public class Main {
 
 
 
+=======
+									BalanceController bc = new BalanceController();
+									UserVO uv = new UserVO(id);
+									int bal = bc.getBalance(uv);
+									System.out.println(name + "님의 최대배팅 가능 금액은" + bal + " 원입니다.");
+									System.out.print("배팅할 금액을 입력해주세요: ");
+									int bet = sc.nextInt();
+									if (bal < bet) {
+										System.out.println("잔액이 부족합니다.");
+									} else {
+										CardCon cdc = new CardCon();
+										int betresult = cdc.cardResult(bet);
+										
+										if (betresult == bet) {
+											int resultFail = bal - bet;
+											UserVO betFail = new UserVO(id, resultFail);
+											bc.updateBalance(betFail);
+											System.out.println("-" + betresult + "원");
+										} else if (betresult == bet - 1) {
+											System.out.println("투입하신 금액이 반환됩니다.");
+											System.out.println(betresult + "원" + "이 반환되었습니다.");
+										} else {
+											int resultSuccess = bal - bet + betresult;
+											UserVO betSuc = new UserVO(id, resultSuccess);
+											bc.updateBalance(betSuc);
+											System.out.println("+" +betresult + "원");
+										}
+									}
+>>>>>>> branch 'master' of https://github.com/2023-SMHRD-KDT-BigData-21/Kim-donghyun2.git
 								} else if (menu3 == 3) {
 									System.out.println("====잔액확인====");
 									BalanceController bc = new BalanceController();
