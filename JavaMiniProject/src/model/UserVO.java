@@ -26,8 +26,9 @@ public class UserVO {
    public UserVO(String id) {
       this.id = id;
    }
-   public UserVO(String name, int balance) {
-	   this.name = name;
+   public UserVO(String st, int balance) {
+	   this.id = st;
+	   this.name=st;
 	   this.balance=balance;
    }
   
