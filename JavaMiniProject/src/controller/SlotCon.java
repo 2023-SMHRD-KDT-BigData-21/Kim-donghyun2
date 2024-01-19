@@ -3,6 +3,8 @@ package controller;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
+import controller.SoundCon;
+
 public class SlotCon {
 
 	public int slotResult(int bet) {
@@ -119,11 +121,10 @@ public class SlotCon {
 		} else {
 			System.out.println("실패!");
 		}
-		
-		  try {
+		try {
 
 			  SoundCon sc = new SoundCon();
-	            sc.playSound("bgm/[Track 01] Casino Sound Effect.wav", false);
+	            sc.playSound("src/bgm/[Track 01] Casino Sound Effect.wav", false);
 	            // 2초 딜레이
 	            TimeUnit.SECONDS.sleep(2);
 	    		sc.playSound("src/audio/금전등록기.wav", false);
@@ -137,7 +138,6 @@ public class SlotCon {
 	        } catch (InterruptedException e) {
 	            System.err.format("IOException: %s%n", e);
 	        }
-		
 		return bet;
 	}
 
