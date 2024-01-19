@@ -22,7 +22,6 @@ public class Main {
 
 		Scanner sc = new Scanner(System.in);
 
-	
 		MP3Player mp3 = new MP3Player();
 
 		RuleCon ru = new RuleCon();
@@ -30,8 +29,7 @@ public class Main {
 		System.out.println("====메인 메뉴====");
 		while (true) {
 
-			System.out.println("\n"
-					+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣠⣤⣄⣠⣄⣀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n"
+			System.out.println("\n" + "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣠⣤⣄⣠⣄⣀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n"
 					+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣤⣶⣶⠾⠿⠛⠛⠋⠉⣿⠏⠙⠛⠛⠿⠿⣶⣦⣤⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n"
 					+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣴⣾⣏⠀⠀⠀⠀⠀⠀⠀⠀⡿⠀⠀⠀⠀⠀⠀⠀⠀⢉⣿⣧⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n"
 					+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣾⠟⠁⠘⢿⡀⠀⠀⠀⠀⠀⣀⢸⡇⠀⠀⢀⣀⡀⠀⠀⢠⡾⠉⠙⠿⣷⣤⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n"
@@ -42,19 +40,18 @@ public class Main {
 					+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢿⣷⡀⣾⣿⣿⣿⣿⣍⣻⣿⣿⣟⢀⣴⠿⣿⣿⠿⢟⣦⡉⠹⣾⣷⣿⣿⣆⣾⡿⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀\n"
 					+ "⠀⠀⠀⠀⠀⠀⠀⠀⣾⣿⣿⣿⣿⣿⡿⢿⣿⣿⣿⣷⣼⣿⣏⣼⣿⣇⣀⣀⣀⣸⣿⣿⣀⣿⣿⣿⣿⣿⣿⣿⣿⡆⠀⠀⠀⠀⠀⠀⠀⠀\n"
 					+ "⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⠛⠉⠉⠙⢿⣿⠉⠉⠉⢻⣿⠋⢉⡉⠙⣿⡏⠉⣿⡏⠉⢿⡍⠉⣿⠋⠉⠉⠙⢿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀\n"
-					+ "⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⠀⢸⡇⠀⢸⡿⠀⢠⠀⢸⣧⠀⠘⠷⣶⣿⡇⠀⣿⡇⠀⠸⠇⠀⣿⠀⠀⡇⠀⢸⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀\n"
-					+ "⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⠀⢸⣷⣶⣿⡇⠀⣾⠀⠘⣿⠷⢦⡀⠀⢻⡇⠀⣿⡇⠀⡀⠀⠀⣿⠀⠀⡇⠀⢸⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀\n"
-					+ "⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⠀⢸⡇⠀⢸⠇⠀⣤⠀⠀⣿⡀⠘⠃⢀⣼⡇⠀⣿⡇⠀⣧⠀⠀⣿⠀⠀⡇⠀⢸⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀\n"
+					+ "⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⠀⢸⡇⠀⢸⡿⠀⢠⠀⢸⣧⠀⠘⠷⣶⣿⡇⠀⣿⡇⠀⠸⠇⠀⣿⠀⠀⡇⠀⢸ ⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀\n"
+					+ "⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⠀⢸⣷⣶⣿⡇⠀⣾⠀⠘⣿⠷⢦⡀⠀⢻⡇⠀⣿⡇⠀⡀⠀⠀⣿⠀⠀⡇⠀⢸ ⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀\n"
+					+ "⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⠀⢸⡇⠀⢸⠇⠀⣤⠀⠀⣿⡀⠘⠃⢀⣼⡇⠀⣿⡇⠀⣧⠀⠀⣿⠀⠀⡇⠀⢸ ⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀\n"
 					+ "⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⡀⠈⢁⣠⣿⣴⣶⣿⣶⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣿⣶⣦⣿⣧⣀⠁⠀⣼⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀\n"
 					+ "⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⣿⣿⠿⠿⠟⠛⠛⠋⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠛⠛⠛⠻⠿⢿⣿⣿⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀\n"
 					+ "⠀⠀⠀⠀⠀⠀⠀⠀⠛⠛⠋⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠛⠛⠃⠀⠀⠀⠀⠀⠀⠀⠀\n"
 					+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀");
-			
+
 			mp3.play("bgm\\y2mate.com - MV IU아이유Coin.mp3");
 
 			SoundCon soc = new SoundCon();
 			
-
 			System.out.println("[1]회원가입 [2]로그인 [3]게임 종료");
 			System.out.print("메뉴를 선택하세요 : ");
 			int menu1 = sc.nextInt();
@@ -92,7 +89,7 @@ public class Main {
 				if (name != null) {
 					System.out.println(name + "님 로그인 성공하셧습니다. ");
 					mp3.stop();
-
+					soc.playSound("src/audio/선수입장.wav", false);
 					while (true) {
 						System.out.println("===== 자 바 랜 드 =====");
 						System.out.println("[1]입장 [2]게임 룰 설명 [3]메인으로");
@@ -115,8 +112,7 @@ public class Main {
 									System.out.println();
 									System.out.println("====슬롯게임====");
 
-									System.out.println("\n"
-											+ "⠀⠀⠀⠀⠀⠀⣟⣛⡛⣛⣛⣛⡛⣛⣛⣛⣛⣛⡛⣛⣛⣛⣛⣛⣛⣛⣛⡛⣛⣛⣛⡛⣛⣛⡛⣛⣛⢛⢟⢿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n"
+									System.out.println("\n" + "⠀⠀⠀⠀⠀⠀⣟⣛⡛⣛⣛⣛⡛⣛⣛⣛⣛⣛⡛⣛⣛⣛⣛⣛⣛⣛⣛⡛⣛⣛⣛⡛⣛⣛⡛⣛⣛⢛⢟⢿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n"
 											+ "⠀⠀⠀⠀⠀⠐⡧⡉⣮⡬⡩⢦⡭⡩⢦⡎⢼⡜⢋⠉⢩⣭⣭⣭⢭⡍⢉⠙⣮⡕⢬⡎⡝⣤⡭⡩⣪⡕⣝⢽⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀\n"
 											+ "⠀⠀⠀⠀⠀⠀⡟⠶⡢⡪⠾⡢⡪⡺⡢⡚⠶⣙⢝⡓⠷⠶⠶⠶⠶⢖⡛⣚⠕⡮⡪⣊⠾⣐⠎⡾⡰⡊⡮⣻⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n"
 											+ "⠀⠀⠀⠀⠀⠀⡟⠛⠚⠋⠛⠚⠛⠚⠙⠛⠙⠓⠋⠛⠛⠛⠛⠛⠛⠓⠋⠛⠙⠚⠓⠋⠛⠚⠛⠚⠛⠚⡙⢫⠄⣠⣤⣤⣀⠀⠀⠀⠀⠀\n"
@@ -140,8 +136,7 @@ public class Main {
 											+ "⠀⠀⠀⠀⠀⠈⣗⠡⡣⡣⡪⡪⡪⡪⣢⠿⠼⢮⢻⢤⡤⡽⢦⡤⡽⢧⡤⡼⠧⠷⠵⢯⡎⡪⡪⡢⡣⢕⢝⣺⠄⠀⠀⠀⠀⠀⠀⠀⠀⠀\n"
 											+ "⠀⠀⠀⠀⠀⠠⣏⠜⡜⢬⢪⢊⢖⢕⠼⠷⠶⠶⠶⠶⠶⠶⠶⠶⠶⠶⠶⠶⠷⠾⢖⢟⢕⢕⢕⢪⢪⠪⣕⢽⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n"
 											+ "⠀⠀⠀⠀⠀⠀⢷⣨⣪⣕⣕⣕⣕⣕⣕⣙⣎⣝⣱⣙⣎⣓⣝⣪⣓⣝⣪⣣⣫⣪⣪⣒⣕⣕⣕⣕⣕⣕⣎⡿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n"
-											+ "⠀⠀⠀⠀⠀⠀⠀⠉⢾⣜⣮⢮⣞⡎⠉⠉⠈⠉⠁⠉⠈⠉⠈⠁⠉⠈⠁⠁⠁⠉⠈⠁⢹⣮⢮⡮⣮⣧⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n"
-											+ "");
+											+ "⠀⠀⠀⠀⠀⠀⠀⠉⢾⣜⣮⢮⣞⡎⠉⠉⠈⠉⠁⠉⠈⠉⠈⠁⠉⠈⠁⠁⠁⠉⠈⠁⢹⣮⢮⡮⣮⣧⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n" + "");
 
 									System.out.println();
 
@@ -155,6 +150,7 @@ public class Main {
 										System.out.println("잔액이 부족합니다.");
 									} else {
 										SlotCon slc = new SlotCon();
+										
 										int betresult = slc.slotResult(bet);
 										if (betresult == bet) {
 											int resultFail = bal - bet;
@@ -197,13 +193,6 @@ public class Main {
 											+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n" + "");
 									System.out.println("====카드게임====");
 
-
-
-									
-
-
-
-
 									BalanceController bc = new BalanceController();
 									UserVO uv = new UserVO(id);
 									int bal = bc.getBalance(uv);
@@ -215,7 +204,7 @@ public class Main {
 									} else {
 										CardCon cdc = new CardCon();
 										int betresult = cdc.cardResult(bet);
-										
+
 										if (betresult == bet) {
 											int resultFail = bal - bet;
 											UserVO betFail = new UserVO(id, resultFail);
@@ -228,7 +217,7 @@ public class Main {
 											int resultSuccess = bal - bet + betresult;
 											UserVO betSuc = new UserVO(id, resultSuccess);
 											bc.updateBalance(betSuc);
-											System.out.println("+" +betresult + "원");
+											System.out.println("+" + betresult + "원");
 										}
 									}
 
@@ -263,7 +252,6 @@ public class Main {
 						} else if (menu2 == 2) {
 							System.out.println("====룰 설명====");
 
-
 							ru = new RuleCon();
 
 							ru.cardrule();
@@ -279,6 +267,7 @@ public class Main {
 
 				} else { // 로그인 실패시 else문
 					System.out.println("아이디 비밀번호를 확인해주세요.");
+					mp3.stop();
 				}
 
 			} else if (menu1 == 3) {
