@@ -152,6 +152,7 @@ public class Main {
 											UserVO betSuc = new UserVO(id, resultSuccess);
 											bc.updateBalance(betSuc);
 											System.out.println("+" + betresult + "원");
+											soc.playSound("src/bgm/slot1_win.wav", false);
 										}
 									}
 

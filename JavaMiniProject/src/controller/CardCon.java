@@ -5,10 +5,15 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
 
 public class CardCon {
 
 	public int cardResult(int bet) {
+
+		SoundCon sc = new SoundCon();
+		sc.playSound("src/audio/cardstart.wav", false);
+		
 
 		List<String> deck = new ArrayList<>();
 		String[] suits = { "♠️", "♦️", "♥️", "♣️" };
@@ -37,7 +42,7 @@ public class CardCon {
 			System.out.println("Computer: " + computerHand + " Total: " + total(computerHand));
 			System.out.println("Winner : Computer");
 			return bet;
-		} 
+		}
 		if (total(computerHand) > 21) { // 컴퓨터 패가 AA로 22넘는경우 확인
 			System.out.println("컴퓨터의 카드의 총합이 21을 초과하여 승리하셨습니다.");
 			System.out.println("Player: " + playerHand + " Total: " + total(playerHand));
@@ -56,11 +61,12 @@ public class CardCon {
 			System.out.println("Computer: " + hiddenHand);
 
 			System.out.println("카드를 한 장 더 받으시겠습니까? (y/n)"); // total 확인 후 카드 받을지 결정
-
+			
 			String input = scanner.nextLine().toLowerCase();
 
 			if (input.equals("y")) { // 플레이어 카드 더 받음
 				playerHand.add(deck.remove(ran.nextInt(deck.size())));
+				sc.playSound("src/audio/cardPlace.wav", false);
 			} else if (input.equals("n")) { // 플레이어 카드 받지 않음
 				while (total(computerHand) <= 16) { // 컴퓨터 total이 16이하면 무한 추가 드로우
 					computerHand.add(deck.remove(ran.nextInt(deck.size())));
@@ -95,11 +101,12 @@ public class CardCon {
 			return bet * 2;
 		} else if (winner.equals("Nobody")) { // 동점일 경우 무승부 출력
 			System.out.println("플레이어와 컴퓨터의 점수가 같습니다.");
-			
+
 			return bet - 1;
 		} else {
 			return bet;
 		}
+
 	}
 
 	// 패에 들어가는 카드 숫자 계산 메소드
