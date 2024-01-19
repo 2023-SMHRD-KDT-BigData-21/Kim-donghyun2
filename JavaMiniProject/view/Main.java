@@ -32,7 +32,7 @@ public class Main {
 		while (true) {
 
 			aski.mainAskiCon();
-			System.out.println("====메인 메뉴====");
+			System.out.println("==========메인 메뉴==========");
 			mp3.play("bgm\\y2mate.com - MV IU아이유Coin.mp3");
 
 			SoundCon soc = new SoundCon();
@@ -43,7 +43,7 @@ public class Main {
 			int menu1 = sc.nextInt();
 			if (menu1 == 1) {
 				joinController join = new joinController();
-				System.out.println("====회원가입====");
+				System.out.println("==========회원가입==========");
 
 				System.out.print("ID : ");
 				String id = sc.next();
@@ -62,7 +62,7 @@ public class Main {
 			} else if (menu1 == 2) {
 				loginController con = new loginController();
 
-				System.out.println("====로그인====");
+				System.out.println("==========로그인==========");
 				System.out.print("ID : ");
 				String id = sc.next();
 				System.out.print("PW : ");
@@ -77,14 +77,14 @@ public class Main {
 					mp3.stop();
 
 					while (true) {
-						System.out.println("===== 자 바 랜 드 =====");
+						System.out.println("========== 자 바 랜 드 ==========");
 						System.out.println("[1]입장 [2]게임 룰 설명 [3]메인으로");
 						System.out.print("메뉴를 선택하세요 : ");
 						int menu2 = sc.nextInt();
 
 						if (menu2 == 1) { // 게임선택으로 이동
 							while (true) {
-								System.out.println("====게임 선택====");
+								System.out.println("==========게임 선택==========");
 								System.out.println("[1]슬롯게임 [2]카드게임 [3]잔액확인 [4]랭킹확인 [5]뒤로가기");
 								System.out.print("메뉴를 선택하세요 : ");
 								int menu3 = sc.nextInt();
@@ -97,7 +97,7 @@ public class Main {
 									// 만약 성공하면 bet * 배당만큼해서 한번 더 업데이트
 									System.out.println();
 									aski.slotAskiCon();
-									System.out.println("====슬롯게임====");
+									System.out.println("==========슬롯게임==========");
 
 									
 
@@ -129,7 +129,7 @@ public class Main {
 									}
 								} else if (menu3 == 2) {
 									aski.cardAskiCon();
-									System.out.println("====카드게임====");
+									System.out.println("==========카드게임==========");
 
 
 
@@ -167,7 +167,7 @@ public class Main {
 									}
 
 								} else if (menu3 == 3) {
-									System.out.println("====잔액확인====");
+									System.out.println("==========잔액확인==========");
 									BalanceController bc = new BalanceController();
 									UserVO uv = new UserVO(id);
 									int bal = bc.getBalance(uv);
@@ -176,11 +176,11 @@ public class Main {
 
 								} else if (menu3 == 4) {
 									RankingCon rc = new RankingCon();
-									System.out.println("====랭킹확인====");
+									System.out.println("==========랭킹확인==========");
 									ArrayList<UserVO> list = rc.rankingList();
 									int ranking = 1;
 
-									System.out.println("== Play List ==");
+									System.out.println("=======Rank List========");
 									for (UserVO ranker : list) {
 
 										System.out.print(ranking + "위. 닉네임: " + ranker.getName());
@@ -195,7 +195,7 @@ public class Main {
 								}
 							}
 						} else if (menu2 == 2) {
-							System.out.println("====룰 설명====");
+							System.out.println("=========룰 설명=========");
 
 
 							ru = new RuleCon();
