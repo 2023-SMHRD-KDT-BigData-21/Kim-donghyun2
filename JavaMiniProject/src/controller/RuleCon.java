@@ -9,6 +9,7 @@ public class RuleCon {
 		System.out.println("4. A은 11점으로 계산합니다.");
 		System.out.println("5. 카드숫자를 확인한 후 추가로 더 받을지 Stop할지 플레이어의 몫입니다 ");
 		System.out.println("6. 인공지능은 합이 (16)이하 이면 카드한장을 받고 (17)이상이면 카드를 받지않습니다.  ");
+		System.out.println("6. 인공지능은 합이 (16)이하 이면 카드을 받고 (17)이상이면 카드를 받지않습니다.  ");
 		System.out.println("7. 플레이어와 인공지능에 순서가 다 끝난 후 게임이 종료됩니다");
 		System.out.println("8. 카드숫자의 합이 (21)의 더 가까운 플레이어가 이기게 됩니다 ");
 		System.out.println("9. 플레이어와 인공지능의 총 합이 같을 시 무승부처리가 됩니다");
